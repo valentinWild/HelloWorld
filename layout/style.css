@@ -1,0 +1,123 @@
+html{
+    background: rgb(30, 33, 41);
+    color: rgb(219, 242, 255);
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 0rem;
+}
+
+header {
+    font-family: 'Roboto Slab', serif;
+}
+
+h1 {
+    color: rgb(181, 255, 251);
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.button{
+    background-color: rgb(93, 243, 236);
+    display: inherit;
+    border-radius: 3px;
+    color: rgb(30, 33, 41);
+    cursor: pointer;
+    border: 2px solid rgb(93, 243, 236);
+    box-shadow: 0px 0px 7px 5px rgba(93, 243, 236, 0.2);
+}
+
+.button:hover{
+    transition: 0.3s ease-in-out;
+    background: rgb(30, 33, 41);
+    color: rgb(93, 243, 236);
+    box-shadow: none;
+}
+
+#btn-start {
+    margin: 3rem 0rem;
+}
+
+.button p {
+    margin: 0.6rem 0.9rem;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.content-box {
+    font-size: 0rem;
+    height: 0rem;
+    color: rgb(30, 33, 41);
+}
+
+footer {
+    margin-top: 3rem;
+    border-top: 1px solid rgb(53, 58, 71);
+    color: rgb(106, 115, 139);
+}
+
+footer a{
+    color: rgb(106, 115, 139);
+}
+
+/* Animation inspired by https://codepen.io/Chester/pen/QPoyjN */
+
+@keyframes rotate {
+	100% {
+		transform: rotate(1turn);
+	}
+}
+
+.visible {
+    font-size: 3rem;
+    height: auto;
+    color: rgb(93, 243, 236);
+    transition: 0.6s ease-in-out;
+    position: relative;
+	z-index: 0;
+	width: 400px;
+	height: 300px;
+	overflow: hidden;
+	padding: 1rem;
+    margin: 6rem 0.5rem;
+}
+
+.visible::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(#399999, #399999), linear-gradient(#00fbd9, #00fbd9), linear-gradient(#193d52, #193d52), linear-gradient(#8fddeb, #8fddeb);
+    animation: rotate 9s linear infinite;
+}
+	
+.visible::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: rgb(30, 33, 41);
+}
